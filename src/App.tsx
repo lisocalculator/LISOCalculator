@@ -66,13 +66,10 @@ function App() {
   return (
     <div className="gradient-bg min-w-screen min-h-screen">
       <Helmet>
-        <meta charSet="utf-8" />
-        <title>LISO Calculator</title>
-        <link
-          rel="canonical"
-          href="https://anetabtc-liso-calculator.herokuapp.com/"
+        <meta
+          http-equiv="Content-Security-Policy"
+          content="upgrade-insecure-requests"
         />
-        <meta name="description" content="LISO Calculator" />
       </Helmet>
       <Header />
       <div className="mx-auto flex flex-col justify-center py-6">
