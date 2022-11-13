@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import MetaTags from "react-meta-tags";
 import { Helmet } from "react-helmet";
 import Stakers from "./Delegators";
 import TotalADAStaked from "./TotalADAStaked";
@@ -65,12 +66,12 @@ function App() {
 
   return (
     <div className="gradient-bg min-w-screen min-h-screen">
-      <Helmet>
+      <MetaTags>
         <meta
           http-equiv="Content-Security-Policy"
           content="upgrade-insecure-requests"
         />
-      </Helmet>
+      </MetaTags>
       <Header />
       <div className="mx-auto flex flex-col justify-center py-6">
         <div className="mx-2 flex flex-col py-10 md:mx-auto md:w-11/12 md:flex-row lg:w-9/12">

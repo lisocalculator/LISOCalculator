@@ -4,7 +4,8 @@
   "homepage": "https://lisocalculator.github.io/lisocalculator",
   "private": true,
   "dependencies": {
-    "gh-pages": "^4.0.0"
+    "gh-pages": "^4.0.0",
+    "react-meta-tags": "^1.0.1"
   },
   "scripts": {
     "predeploy": "npm run build",
