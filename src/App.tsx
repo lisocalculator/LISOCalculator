@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-import MetaTags from "react-meta-tags";
-import { Helmet } from "react-helmet";
 import Stakers from "./Delegators";
 import TotalADAStaked from "./TotalADAStaked";
 import { Footer } from "./Footer";
@@ -13,6 +11,10 @@ import NumericFormat from "react-number-format";
 import StakingAddressForm from "./StakingAddressForm";
 
 function App() {
+  const BACKEND_API = process.env.REACT_APP_LISO_BACKEND_API_URL;
+
+  console.log(BACKEND_API);
+
   const [currentEpoch, setCurrentEpoch] = useState(0);
   const [LISOIRewards, setLISOIRewards] = useState<ILISOIRewards>({
     stakingRewards: 0,
@@ -38,7 +40,7 @@ function App() {
   const [history, setHistory] = useState([]);
 
   useEffect(() => {
-    fetch(`http://anetabtc-liso-calculator-backend.deta.dev/history`)
+    fetch(`${BACKEND_API}/history`)
       .then((res) => res.json())
       .then(
         (result) => {
@@ -66,12 +68,6 @@ function App() {
 
   return (
     <div className="gradient-bg min-w-screen min-h-screen">
-      <MetaTags>
-        <meta
-          http-equiv="Content-Security-Policy"
-          content="upgrade-insecure-requests"
-        />
-      </MetaTags>
       <Header />
       <div className="mx-auto flex flex-col justify-center py-6">
         <div className="mx-2 flex flex-col py-10 md:mx-auto md:w-11/12 md:flex-row lg:w-9/12">

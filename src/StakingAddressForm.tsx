@@ -20,6 +20,8 @@ const StakingAddressForm = ({
   setLISOIIRewards,
   manuallyCalculate,
 }: Props) => {
+  const BACKEND_API = process.env.REACT_APP_LISO_BACKEND_API_URL;
+
   const [stakingAddress, setStakingAddress] = useState("");
   const [stakingAddressError, setStakingAddressError] = useState(false);
   const [angelCount, setAngelCount] = useState(0);
@@ -42,9 +44,7 @@ const StakingAddressForm = ({
     if (stakingAddress) {
       // fetch(`http://localhost:3001/api/delegatorHistory/${stakingAddress}`)
       // fetch(`${getPort()}/delegatorHistory/${stakingAddress}`)
-      fetch(
-        `http://anetabtc-liso-calculator-backend.deta.dev/delegatorHistory/${stakingAddress}`
-      )
+      fetch(`${BACKEND_API}/${stakingAddress}`)
         .then((res) => res.json())
         .then((result) => {
           setStakingAddressError(false);
