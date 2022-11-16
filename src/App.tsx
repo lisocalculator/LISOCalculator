@@ -13,8 +13,6 @@ import StakingAddressForm from "./StakingAddressForm";
 function App() {
   const BACKEND_API = process.env.REACT_APP_LISO_BACKEND_API_URL;
 
-  console.log(BACKEND_API);
-
   const [currentEpoch, setCurrentEpoch] = useState(0);
   const [LISOIRewards, setLISOIRewards] = useState<ILISOIRewards>({
     stakingRewards: 0,

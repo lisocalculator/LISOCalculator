@@ -72,14 +72,11 @@ const StakingAddressForm = ({
         })
         .catch((error) => {
           console.log(error);
-
           setStakingAddressError(true);
         });
 
       // fetch(`http://localhost:3001/api/${stakingAddress}/addresses`)
-      fetch(
-        `http://anetabtc-liso-calculator-backend.deta.dev/stakeAddress/${stakingAddress}`
-      )
+      fetch(`${BACKEND_API}/stakeAddress/${stakingAddress}`)
         .then((res) => res.json())
         .then(
           (res) => {
